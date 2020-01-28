@@ -1,12 +1,15 @@
-
-const helper = require('../support/helper')
-const login = require('../page_objects/login_page')
-const dashboard = require('../page_objects/dashboard_page')
-const config = require('../env').config
+const helper = require('../../support/helper')
+const login = require('../../page_objects/login_page')
+const dashboard = require('../../page_objects/dashboard_page')
+const config = require('../../env').config
 const _ = require('lodash')
 
 // spec.js
 describe('Login', function() {
+
+  beforeAll(function() {
+
+  });
   
   it('Login as Admin User', async function() {
     await browser.driver.manage().deleteAllCookies()

@@ -1,6 +1,6 @@
 # protractor-jasmine
 
-Protractor proof of concept project based on jasmine framework
+Web UI Automation based on Protractor, Selenium and Jasmine framework
 
 ## Getting Started
 Make sure you have installed:
@@ -10,13 +10,18 @@ Make sure you have installed:
 
 ### Clone the github repository:
 ``` 
-git clone https://github.com/veroplem/protractor-jasmine.git
-cd /protractor-jasmine
+git clone https://github.com/TradifyHQ/web-automation-protractor.git
 ```
 
 ### Install Project Dependencies
 ```
+//Navigate into the folder with the solution
+cd cd /web-automation-protractor
 npm install
+```
+### Download the necessary libraries and Chrome Driver
+```
+webdriver-manager start
 ```
 
 ### Start Webdriver Manager
@@ -25,8 +30,19 @@ webdriver-manager start
 ```
 
 ### Run tests:
-tests can be run across  diffrent environments and operating systems:
+By default tests will be run on the QA environment
 ```
-start-{qa/prod/staging}-test-{win/linux}
+protractor config.js
+```
+
+Tests can be run across  diffrent environments and operating systems:
+```
+Commands to run npm scripts:
+npm run start-qa-all-test-win
+npm run start-qa-all-test-linux
+npm run start-prod-all-test-win
+npm run start-prod-all-test-linux
+npm run start-staging-all-test-win
+npm run start-staging-all-test-linux
 ```
 

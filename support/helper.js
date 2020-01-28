@@ -9,14 +9,11 @@ const helper = function () {
   this.waitForElementToBePresented = async (elementLocator, timeout = 30000) => browser.wait(EC.presenceOf(elementLocator), timeout)
   this.waitForElementToBeVisible = async (elementLocator, timeout = 30000) => browser.wait(EC.visibilityOf(elementLocator), timeout)
   this.waitForElementToDisapear = async (elementLocator, timeout = 30000) => {
-    protractorHelper.waitForElementVisibility(elementLocator, timeout)
-    //return browser.wait(EC.invisibilityOf(elementLocator), timeout)
+  return browser.wait(EC.invisibilityOf(elementLocator), timeout)
   }
   this.inputText = async (elementLocator, text, timeout = 5000) => {
-    protractorHelper.waitForElementPresence(elementLocator, timeout)
-    //await browser.wait(EC.presenceOf(elementLocator), timeout)
-    protractorHelper.waitForElementVisibility(elementLocator, timeout)
-    //await browser.wait(EC.visibilityOf(elementLocator), timeout)
+    await browser.wait(EC.presenceOf(elementLocator), timeout)
+    await browser.wait(EC.visibilityOf(elementLocator), timeout)
     return elementLocator.sendKeys(text)
   }
   this.getText = async (elementLocator, timeout = 5000) => {
